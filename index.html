@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Best Friend ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #e6d6ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #7b3561;
+}
+
+.container {
+    background: rgba(255,255,255,0.85);
+    padding: 35px 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 35px #b77b9b55;
+    z-index: 2;
+    animation: appear 1.5s ease;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.heart {
+    font-size: 60px;
+    animation: beat 1s infinite;
+    margin: 15px;
+}
+
+button {
+    border: none;
+    background: #ff72a6;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#surprise {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: appear 1s;
+}
+
+.floating {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp 6s linear forwards;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hey, Bestie! 💗</h1>
+
+    <div class="heart">❤️</div>
+
+    <p>
+        I just want you to know para alam mo na idol mo ako char😭😭😭😭nga pala bes here lang lage to support you!     </p>
+
+    <p>
+        No matter what happens,
+        I'll always be here for you.
+        You're not just my best friend,
+        you're family. 🥹
+    </p>
+
+    <button onclick="showLove()">
+        Open Your Surprise 💌
+    </button>
+
+    <div id="surprise">
+        December 5 ah!!! ❤️<br><br>
+        Thank you for being my bff 🫶
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "floating";
+
+    heart.innerHTML = ["❤️", "💗", "💕", "✨", "🌸"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
